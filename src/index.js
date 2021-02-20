@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';
 import reportWebVitals from './reportWebVitals';
-import "./generator"
 ReactDOM.render(
 
     <App />

@@ -1,5 +1,4 @@
 import axiosService from './../commons/axiosService';
-import AxiosService from './../commons/axiosService';
 import {API_ENDPOINT} from './../constants/index';
 const url = 'task';
 

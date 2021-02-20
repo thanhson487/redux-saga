@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, withStyles } from '@material-ui/core';
 import styles from './style'
 TaskForm.propTypes = {
