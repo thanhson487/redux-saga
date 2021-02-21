@@ -3,6 +3,15 @@ import { getList } from "../apis/task";
 import * as taskTypes from "./../constants/task";
 import {STATUS_CODE} from './../constants/index'
 import { fetchListTaskFailed, fetchListTaskSuccess } from "../action/task";
+
+/**
+ * B1: Thực thi action lấy danh sách
+ * B2: Gọi API 
+ * B2.1: Hiển thị thanh loading
+ * B3: Kiểm tra status code 
+ * B4: thực thi công việc tiếp theo
+ */
+
 function* watchFetchListTaskAction() {
     while(true){
         yield take(taskTypes.FETCH_TASK);
