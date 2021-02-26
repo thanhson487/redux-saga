@@ -32,6 +32,7 @@ function* watchFetchListTaskAction() {
      }
     
      yield put(hideLoading());
+
     }
  
   

@@ -12,6 +12,8 @@ import TaskForm from "../../components/TaskForm";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as taskActions from "./../../action/task";
+import { Search } from "@material-ui/icons";
+import SearchBox from "../../components/SearchBox";
 
 TaskBorad.propTypes = {};
 
@@ -60,6 +62,13 @@ function TaskBorad(props) {
       fetchListTask();
   
   }
+  function renderSearchBox(){
+    let xhtml = null;
+    xhtml = (
+    <SearchBox></SearchBox>
+    );
+    return xhtml;
+  }
   return (
     <div className={classes.taskBoard}>
       <Button
@@ -79,7 +88,7 @@ function TaskBorad(props) {
       >
         Load Data
       </Button>
-
+      {renderSearchBox()}
       {renderBoard()}
       {renderForm()}
     </div>
