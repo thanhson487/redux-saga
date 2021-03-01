@@ -1,3 +1,4 @@
+import { MergeTypeSharp } from '@material-ui/icons';
 import { toastError } from '../helpers/toastHelper';
 import * as taskConstants from './../constants/task'
 
@@ -25,6 +26,13 @@ const reducer = (state = initialState, action) => {
       toastError(error)
       return {
       
+      }
+    }
+    case taskConstants.FILTER_TASK_SUCCESS:{
+      const {data} = action.payload;
+      return{
+        ...state,
+        listTask: data,
       }
     }
     default:

@@ -21,7 +21,6 @@ function TaskBorad(props) {
   const { classes, taskActionsCreators, listTask } = props;
   const [open, setOpen] = useState(false);
 
- 
   function renderBoard() {
     let xhtml = null;
     xhtml = (
@@ -57,16 +56,19 @@ function TaskBorad(props) {
     xhtml = <TaskForm open={open} onClose={handleClose}></TaskForm>;
     return xhtml;
   }
-  function loadData(){
+  function loadData() {
     const { fetchListTask } = taskActionsCreators;
-      fetchListTask();
-  
+    fetchListTask();
   }
-  function renderSearchBox(){
+  function handleFilter(e) {
+    const { value } = e.target;
+    const { taskActionsCreators } = props;
+    const { filterTask } = taskActionsCreators;
+    filterTask(value);
+  }
+  function renderSearchBox() {
     let xhtml = null;
-    xhtml = (
-    <SearchBox></SearchBox>
-    );
+    xhtml = <SearchBox handleChange={handleFilter}></SearchBox>;
     return xhtml;
   }
   return (
@@ -78,7 +80,6 @@ function TaskBorad(props) {
         onClick={openForm}
       >
         <AddIcon></AddIcon>Thêm mới công việc
-        
       </Button>
       <Button
         variant="contained"

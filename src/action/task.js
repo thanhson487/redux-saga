@@ -21,17 +21,18 @@ export const fetchListTaskFailed = (error) => {
     },
   };
 };
-// export const fetchListTaskRequest = () => {
-//   return (dispatch) => {
-//       dispatch(fetchListTask())
-//         taskApis
-//       .getList()
-//       .then((res) => {
-//           const {data} = res;
-//         dispatch(fetchListTaskSuccess(data))
-//       })
-//       .catch((err) => {
-//         dispatch(fetchListTaskFailed(err))
-//       });
-//   };
-// };
+export const filterTask = keyword =>{
+  return{
+    type: taskConstants.FILTER_TASK,
+    payload: {
+      keyword,
+    }
+  }
+}
+export const filterTaskSuccess = (data) =>{
+  
+  return{
+    type:  taskConstants.FILTER_TASK_SUCCESS,
+    payload: {data},
+  }
+}
